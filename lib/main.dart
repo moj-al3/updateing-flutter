@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:updating/home_screen.dart';
+
+import 'home_screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter AutoUpdate',
-      home: HomeScreen(),
+    return MaterialApp(
+      title: 'In App Updates in Flutter Desktop App',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(title: 'In App Updates in Flutter Desktop App'),
     );
   }
 }
